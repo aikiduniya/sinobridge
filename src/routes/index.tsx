@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/Layout";
 import { InquiryForm } from "@/components/site/InquiryForm";
 import {
-  Search, ShieldCheck, Handshake, ClipboardCheck, Package, Ship, Boxes,
   CheckCircle2, Globe2, Award, Zap, BadgePercent, ArrowRight, Star, Factory,
   Cpu, Shirt, Wrench, UtensilsCrossed, Car, Settings2,
+  ShieldCheck, Handshake, Boxes,
 } from "lucide-react";
 import heroImg from "@/assets/hero-port.jpg";
 import factoryImg from "@/assets/factory.jpg";
 import inspectionImg from "@/assets/inspection.jpg";
+import { services } from "@/data/services";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,16 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
-const services = [
-  { icon: Search, title: "Product Sourcing", desc: "Find the right manufacturer in China for any product category." },
-  { icon: ShieldCheck, title: "Supplier Verification", desc: "Factory audits, business licence checks, on-site visits." },
-  { icon: Handshake, title: "Price Negotiation", desc: "Leverage our local relationships to secure the best pricing." },
-  { icon: ClipboardCheck, title: "Quality Inspection", desc: "Pre-shipment inspection and lab testing on every order." },
-  { icon: Package, title: "Procurement Management", desc: "End-to-end order, production and document handling." },
-  { icon: Ship, title: "Shipping & Logistics", desc: "Sea, air and door-to-door delivery to your country." },
-  { icon: Boxes, title: "End-to-End Service", desc: "One trusted partner from inquiry to final delivery." },
-];
 
 const industries = [
   { icon: Cpu, label: "Electronics" },
@@ -167,16 +158,41 @@ function Home() {
             <h2 className="mt-3 text-3xl md:text-4xl font-bold">Everything you need to buy from China</h2>
             <p className="mt-4 text-muted-foreground">A complete procurement service — from finding the right factory to delivering containers at your door.</p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
-              <div key={s.title} className="group rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition-all">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground group-hover:scale-105 transition-transform">
-                  <s.icon className="h-6 w-6" />
+              <Link
+                key={s.slug}
+                to="/services/$slug"
+                params={{ slug: s.slug }}
+                className="group rounded-2xl bg-card border border-border overflow-hidden hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition-all flex flex-col"
+              >
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    loading="lazy"
+                    width={1280}
+                    height={800}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 grid h-10 w-10 place-items-center rounded-lg bg-white/95 text-primary shadow">
+                    <s.icon className="h-5 w-5" />
+                  </div>
                 </div>
-                <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{s.short}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/services">View All Services <ArrowRight className="h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -22,16 +22,19 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-white">About Us</Link></li>
             <li><Link to="/how-it-works" className="hover:text-white">How It Works</Link></li>
             <li><Link to="/services" className="hover:text-white">Services</Link></li>
+            <li><Link to="/reviews" className="hover:text-white">Reviews</Link></li>
+            <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
             <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="text-white text-sm font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-[oklch(0.75_0.02_245)]">
-            <li>Product Sourcing</li>
-            <li>Supplier Verification</li>
-            <li>Quality Inspection</li>
-            <li>Shipping & Logistics</li>
+            <li><Link to="/services/$slug" params={{ slug: "product-sourcing" }} className="hover:text-white">Product Sourcing</Link></li>
+            <li><Link to="/services/$slug" params={{ slug: "supplier-verification" }} className="hover:text-white">Supplier Verification</Link></li>
+            <li><Link to="/services/$slug" params={{ slug: "quality-inspection" }} className="hover:text-white">Quality Inspection</Link></li>
+            <li><Link to="/services/$slug" params={{ slug: "shipping-logistics" }} className="hover:text-white">Shipping & Logistics</Link></li>
+            <li><Link to="/services/$slug" params={{ slug: "end-to-end-buying" }} className="hover:text-white">End-to-End Buying</Link></li>
           </ul>
         </div>
         <div>
