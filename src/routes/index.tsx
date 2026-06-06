@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/Layout";
 import { InquiryForm } from "@/components/site/InquiryForm";
 import {
-  Search, ShieldCheck, Handshake, ClipboardCheck, Package, Ship, Boxes,
   CheckCircle2, Globe2, Award, Zap, BadgePercent, ArrowRight, Star, Factory,
   Cpu, Shirt, Wrench, UtensilsCrossed, Car, Settings2,
+  ShieldCheck, Handshake, Boxes,
 } from "lucide-react";
 import heroImg from "@/assets/hero-port.jpg";
 import factoryImg from "@/assets/factory.jpg";
 import inspectionImg from "@/assets/inspection.jpg";
+import { services } from "@/data/services";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,16 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
-const services = [
-  { icon: Search, title: "Product Sourcing", desc: "Find the right manufacturer in China for any product category." },
-  { icon: ShieldCheck, title: "Supplier Verification", desc: "Factory audits, business licence checks, on-site visits." },
-  { icon: Handshake, title: "Price Negotiation", desc: "Leverage our local relationships to secure the best pricing." },
-  { icon: ClipboardCheck, title: "Quality Inspection", desc: "Pre-shipment inspection and lab testing on every order." },
-  { icon: Package, title: "Procurement Management", desc: "End-to-end order, production and document handling." },
-  { icon: Ship, title: "Shipping & Logistics", desc: "Sea, air and door-to-door delivery to your country." },
-  { icon: Boxes, title: "End-to-End Service", desc: "One trusted partner from inquiry to final delivery." },
-];
 
 const industries = [
   { icon: Cpu, label: "Electronics" },
