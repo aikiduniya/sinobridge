@@ -8,6 +8,8 @@ const navItems = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/how-it-works", label: "How It Works" },
+  { to: "/reviews", label: "Reviews" },
+  { to: "/faqs", label: "FAQs" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
