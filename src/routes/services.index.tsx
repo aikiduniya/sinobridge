@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — China Sourcing, Inspection & Shipping | SinoBridge" },
