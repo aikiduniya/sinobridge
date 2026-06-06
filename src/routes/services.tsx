@@ -2,9 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
-import {
-  Search, ShieldCheck, Handshake, ClipboardCheck, Package, Ship, Boxes, ArrowRight,
-} from "lucide-react";
+import { services } from "@/data/services";
+import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -20,39 +19,49 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const services = [
-  { icon: Search, title: "Product Sourcing from China", desc: "We identify the best-fit manufacturers for your product, brief multiple factories and shortlist serious, capable suppliers." },
-  { icon: ShieldCheck, title: "Supplier Verification & Factory Audit", desc: "Business licence checks, on-site visits, production capacity review and reference checks to confirm legitimacy and capability." },
-  { icon: Handshake, title: "Price Negotiation with Manufacturers", desc: "Our local team negotiates pricing, payment terms, MOQ, samples and lead times directly in Mandarin." },
-  { icon: ClipboardCheck, title: "Product Quality Inspection & Testing", desc: "Pre-production, in-line and pre-shipment inspections with photo/video reports. Lab testing arranged on request." },
-  { icon: Package, title: "Procurement & Order Management", desc: "Purchase orders, production tracking, sample approvals and full document handling — all coordinated for you." },
-  { icon: Ship, title: "Shipping & Logistics Coordination", desc: "Sea, air, express and door-to-door delivery. Customs documents prepared, freight forwarders coordinated, ETAs tracked." },
-  { icon: Boxes, title: "End-to-End Buying Service", desc: "One trusted partner from first inquiry to final delivery — no need to manage suppliers, forwarders or inspectors yourself." },
-];
-
 function ServicesPage() {
   return (
     <SiteLayout>
       <PageHero
         eyebrow="Our Services"
         title="A complete China procurement service under one roof"
-        subtitle="From the first product brief to the final container at your warehouse — we handle every step with full transparency."
+        subtitle="From the first product brief to the final container at your warehouse — explore each service in detail."
       />
 
       <section className="py-20">
         <div className="container-page">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
-              <div key={s.title} className="rounded-2xl border border-border bg-card p-7 hover:shadow-[var(--shadow-card)] hover:border-primary/40 transition-all">
-                <div className="flex items-center gap-4">
-                  <div className="grid h-14 w-14 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">
-                    <s.icon className="h-7 w-7" />
+              <Link
+                key={s.slug}
+                to="/services/$slug"
+                params={{ slug: s.slug }}
+                className="group rounded-2xl bg-card border border-border overflow-hidden hover:shadow-[var(--shadow-card)] hover:border-primary/40 transition-all flex flex-col"
+              >
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    loading="lazy"
+                    width={1280}
+                    height={800}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 grid h-11 w-11 place-items-center rounded-xl bg-white/95 text-primary shadow-md">
+                    <s.icon className="h-5 w-5" />
                   </div>
-                  <span className="text-xs font-semibold text-muted-foreground">SERVICE 0{i + 1}</span>
+                  <span className="absolute top-4 right-4 text-xs font-semibold text-white bg-black/40 backdrop-blur px-2 py-1 rounded">
+                    0{i + 1}
+                  </span>
                 </div>
-                <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold">{s.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{s.short}</p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    View details <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
