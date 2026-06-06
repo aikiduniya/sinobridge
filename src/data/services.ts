@@ -7,8 +7,8 @@ import shippingImg from "@/assets/svc-shipping.jpg";
 import endtoendImg from "@/assets/svc-endtoend.jpg";
 import {
   Search, ShieldCheck, Handshake, ClipboardCheck, Package, Ship, Boxes,
-  type LucideIcon,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export interface ServiceItem {
   slug: string;

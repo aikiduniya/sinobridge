@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { Button } from "@/components/ui/button";
 import { InquiryForm } from "@/components/site/InquiryForm";
-import { services, getService } from "@/data/services";
+import { services, getService, type ServiceItem } from "@/data/services";
 import { ArrowRight, ArrowLeft, CheckCircle2, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const { service: s } = Route.useLoaderData();
+  const { service: s } = Route.useLoaderData() as { service: ServiceItem };
   const others = services.filter((x) => x.slug !== s.slug).slice(0, 3);
 
   return (
