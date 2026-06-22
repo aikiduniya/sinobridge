@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as FaqsRouteImport } from './routes/faqs'
@@ -19,11 +18,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
@@ -72,7 +66,6 @@ export interface FileRoutesByFullPath {
   '/faqs': typeof FaqsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/reviews': typeof ReviewsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -83,7 +76,6 @@ export interface FileRoutesByTo {
   '/faqs': typeof FaqsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/reviews': typeof ReviewsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -95,7 +87,6 @@ export interface FileRoutesById {
   '/faqs': typeof FaqsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/reviews': typeof ReviewsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -108,7 +99,6 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/how-it-works'
     | '/reviews'
-    | '/sitemap.xml'
     | '/services/$slug'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -119,7 +109,6 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/how-it-works'
     | '/reviews'
-    | '/sitemap.xml'
     | '/services/$slug'
     | '/services'
   id:
@@ -130,7 +119,6 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/how-it-works'
     | '/reviews'
-    | '/sitemap.xml'
     | '/services/$slug'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -142,20 +130,12 @@ export interface RootRouteChildren {
   FaqsRoute: typeof FaqsRoute
   HowItWorksRoute: typeof HowItWorksRoute
   ReviewsRoute: typeof ReviewsRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
@@ -222,20 +202,9 @@ const rootRouteChildren: RootRouteChildren = {
   FaqsRoute: FaqsRoute,
   HowItWorksRoute: HowItWorksRoute,
   ReviewsRoute: ReviewsRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
