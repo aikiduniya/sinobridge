@@ -22,7 +22,7 @@ import appleLogo from "@/assets/brands/apple.svg";
 import samsungLogo from "@/assets/brands/samsung.svg";
 import xiaomiLogo from "@/assets/brands/xiaomi.svg";
 import huaweiLogo from "@/assets/brands/huawei.svg";
-import sonyLogo from "@/assets/brands/sony.svg";
+
 import lgLogo from "@/assets/brands/lg.svg";
 import hpLogo from "@/assets/brands/hp.svg";
 import dellLogo from "@/assets/brands/dell.svg";
@@ -80,7 +80,7 @@ const brandLogos = [
   { name: "Samsung", logo: samsungLogo },
   { name: "Xiaomi", logo: xiaomiLogo },
   { name: "Huawei", logo: huaweiLogo },
-  { name: "Sony", logo: sonyLogo },
+  
   { name: "LG", logo: lgLogo },
   { name: "HP", logo: hpLogo },
   { name: "Dell", logo: dellLogo },
@@ -209,13 +209,13 @@ function Home() {
               {[...brandLogos, ...brandLogos].map((b, i) => (
                 <div
                   key={`${b.name}-${i}`}
-                  className="shrink-0 w-40 rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4"
+                  className="shrink-0 w-56 rounded-xl border border-border bg-card h-36 flex items-center justify-center px-6"
                 >
                   <img
                     src={b.logo}
                     alt={`${b.name} logo`}
                     loading="lazy"
-                    className="max-h-10 max-w-[80%] object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0"
+                    className="max-h-20 max-w-[85%] object-contain opacity-80 hover:opacity-100 transition"
                   />
                 </div>
               ))}
