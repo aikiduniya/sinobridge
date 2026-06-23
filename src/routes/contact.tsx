@@ -2,14 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { InquiryForm } from "@/components/site/InquiryForm";
-import { Mail, Phone, MapPin, MessageCircle, Clock, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Clock, Facebook, Instagram } from "lucide-react";
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M21 8.5a7.5 7.5 0 0 1-4.7-1.64v7.39a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.1a3 3 0 1 0 2 2.81V2h3a4.5 4.5 0 0 0 4.7 4.5z" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Get a Free Quote | SinoBridge China Sourcing" },
+      { title: "Contact Us — Get a Free Quote | China SourceLink" },
       { name: "description", content: "Contact our China sourcing team. Free quotes within 12–24 hours. WhatsApp, email and inquiry form available." },
-      { property: "og:title", content: "Contact — SinoBridge" },
+      { property: "og:title", content: "Contact — China SourceLink" },
       { property: "og:description", content: "Reach our team for a free China sourcing quote." },
       { property: "og:url", content: "/contact" },
     ],
