@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/Layout";
 import { InquiryForm } from "@/components/site/InquiryForm";
@@ -9,6 +9,8 @@ import {
   ShieldCheck, Handshake, Boxes, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-port.jpg";
+import heroFactoryImg from "@/assets/hero-factory.jpg";
+import heroCargoImg from "@/assets/hero-cargo.jpg";
 import factoryImg from "@/assets/factory.jpg";
 import inspectionImg from "@/assets/inspection.jpg";
 import { services } from "@/data/services";
@@ -49,14 +51,29 @@ const brandLogos = [
   { name: "Nike", slug: "nike" },
   { name: "Adidas", slug: "adidas" },
   { name: "Puma", slug: "puma" },
+  { name: "Under Armour", slug: "underarmour" },
   { name: "Apple", slug: "apple" },
   { name: "Samsung", slug: "samsung" },
   { name: "Xiaomi", slug: "xiaomi" },
+  { name: "Huawei", slug: "huawei" },
   { name: "Sony", slug: "sony" },
+  { name: "LG", slug: "lg" },
   { name: "HP", slug: "hp" },
   { name: "Dell", slug: "dell" },
+  { name: "Lenovo", slug: "lenovo" },
   { name: "Zara", slug: "zara" },
+  { name: "H&M", slug: "handm" },
+  { name: "Uniqlo", slug: "uniqlo" },
+  { name: "Rolex", slug: "rolex" },
+  { name: "Omega", slug: "omega" },
+  { name: "Tag Heuer", slug: "tagheuer" },
+  { name: "Casio", slug: "casio" },
+  { name: "Seiko", slug: "seiko" },
+  { name: "Citizen", slug: "citizen" },
+  { name: "Fossil", slug: "fossil" },
+  { name: "Tissot", slug: "tissot" },
 ];
+
 
 
 const steps = [
@@ -86,10 +103,8 @@ function Home() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="China shipping port with cargo containers" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-90" />
-        </div>
+        <HeroSlider />
+        <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-70 pointer-events-none" />
         <div className="container-page relative py-24 md:py-32 text-white">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
@@ -165,21 +180,22 @@ function Home() {
               Need authentic branded goods, licensed merchandise or OEM/ODM products? We work with authorised distributors and verified factories to source the brand-name items your customers ask for.
             </p>
           </div>
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {brandLogos.map((b) => (
-              <div
-                key={b.name}
-                className="rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4 hover:border-primary/40 transition-colors"
-              >
-                <img
-                  src={`https://cdn.simpleicons.org/${b.slug}`}
-                  alt={`${b.name} logo`}
-                  loading="lazy"
-                  className="max-h-10 max-w-[80%] object-contain opacity-80 hover:opacity-100 transition"
-                />
-
-              </div>
-            ))}
+          <div className="mt-10 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <div className="flex gap-4 w-max animate-brand-marquee hover:[animation-play-state:paused]">
+              {[...brandLogos, ...brandLogos].map((b, i) => (
+                <div
+                  key={`${b.name}-${i}`}
+                  className="shrink-0 w-40 rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4"
+                >
+                  <img
+                    src={`https://cdn.simpleicons.org/${b.slug}`}
+                    alt={`${b.name} logo`}
+                    loading="lazy"
+                    className="max-h-10 max-w-[80%] object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">
             Brand names shown are trademarks of their respective owners and are referenced only to illustrate categories of products we have helped clients source.
@@ -365,12 +381,13 @@ function Home() {
 function ServicesSlider() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
+  const [paused, setPaused] = useState(false);
   const visible = 3;
   const total = services.length;
   const maxPage = Math.max(0, Math.ceil(total / visible) - 1);
 
   const scrollTo = (p: number) => {
-    const next = Math.max(0, Math.min(maxPage, p));
+    const next = ((p % (maxPage + 1)) + (maxPage + 1)) % (maxPage + 1);
     setPage(next);
     const track = trackRef.current;
     if (!track) return;
@@ -378,8 +395,29 @@ function ServicesSlider() {
     if (child) track.scrollTo({ left: child.offsetLeft - track.offsetLeft, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setPage((p) => {
+        const next = (p + 1) % (maxPage + 1);
+        const track = trackRef.current;
+        if (track) {
+          const child = track.children[next * visible] as HTMLElement | undefined;
+          if (child) track.scrollTo({ left: child.offsetLeft - track.offsetLeft, behavior: "smooth" });
+        }
+        return next;
+      });
+    }, 4000);
+    return () => clearInterval(id);
+  }, [paused, maxPage]);
+
+
   return (
-    <section className="py-20 bg-[image:var(--gradient-subtle)]">
+    <section
+      className="py-20 bg-[image:var(--gradient-subtle)]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="container-page">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
@@ -390,22 +428,21 @@ function ServicesSlider() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scrollTo(page - 1)}
-              disabled={page === 0}
               aria-label="Previous services"
-              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary transition"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => scrollTo(page + 1)}
-              disabled={page >= maxPage}
               aria-label="Next services"
-              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary transition"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
+
 
         <div
           ref={trackRef}
@@ -470,3 +507,31 @@ function Stat({ big, small }: { big: string; small: string }) {
     </div>
   );
 }
+
+function HeroSlider() {
+  const slides = [
+    { src: heroImg, alt: "China shipping port with cargo containers" },
+    { src: heroFactoryImg, alt: "Modern Chinese manufacturing factory" },
+    { src: heroCargoImg, alt: "Cargo ship loaded with containers at port" },
+  ];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % slides.length), 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
+  return (
+    <div className="absolute inset-0">
+      {slides.map((s, i) => (
+        <img
+          key={s.src}
+          src={s.src}
+          alt={s.alt}
+          width={1920}
+          height={1080}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
+}
+
