@@ -51,14 +51,29 @@ const brandLogos = [
   { name: "Nike", slug: "nike" },
   { name: "Adidas", slug: "adidas" },
   { name: "Puma", slug: "puma" },
+  { name: "Under Armour", slug: "underarmour" },
   { name: "Apple", slug: "apple" },
   { name: "Samsung", slug: "samsung" },
   { name: "Xiaomi", slug: "xiaomi" },
+  { name: "Huawei", slug: "huawei" },
   { name: "Sony", slug: "sony" },
+  { name: "LG", slug: "lg" },
   { name: "HP", slug: "hp" },
   { name: "Dell", slug: "dell" },
+  { name: "Lenovo", slug: "lenovo" },
   { name: "Zara", slug: "zara" },
+  { name: "H&M", slug: "handm" },
+  { name: "Uniqlo", slug: "uniqlo" },
+  { name: "Rolex", slug: "rolex" },
+  { name: "Omega", slug: "omega" },
+  { name: "Tag Heuer", slug: "tagheuer" },
+  { name: "Casio", slug: "casio" },
+  { name: "Seiko", slug: "seiko" },
+  { name: "Citizen", slug: "citizen" },
+  { name: "Fossil", slug: "fossil" },
+  { name: "Tissot", slug: "tissot" },
 ];
+
 
 
 const steps = [
