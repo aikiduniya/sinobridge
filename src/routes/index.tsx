@@ -14,6 +14,30 @@ import heroCargoImg from "@/assets/hero-cargo.jpg";
 import factoryImg from "@/assets/factory.jpg";
 import inspectionImg from "@/assets/inspection.jpg";
 import { services } from "@/data/services";
+import nikeLogo from "@/assets/brands/nike.svg";
+import adidasLogo from "@/assets/brands/adidas.svg";
+import pumaLogo from "@/assets/brands/puma.svg";
+import underArmourLogo from "@/assets/brands/under-armour.svg";
+import appleLogo from "@/assets/brands/apple.svg";
+import samsungLogo from "@/assets/brands/samsung.svg";
+import xiaomiLogo from "@/assets/brands/xiaomi.svg";
+import huaweiLogo from "@/assets/brands/huawei.svg";
+import sonyLogo from "@/assets/brands/sony.svg";
+import lgLogo from "@/assets/brands/lg.svg";
+import hpLogo from "@/assets/brands/hp.svg";
+import dellLogo from "@/assets/brands/dell.svg";
+import lenovoLogo from "@/assets/brands/lenovo.svg";
+import zaraLogo from "@/assets/brands/zara.svg";
+import hmLogo from "@/assets/brands/hm.svg";
+import uniqloLogo from "@/assets/brands/uniqlo.svg";
+import rolexLogo from "@/assets/brands/rolex.svg";
+import omegaLogo from "@/assets/brands/omega.png";
+import tagHeuerLogo from "@/assets/brands/tag-heuer.png";
+import casioLogo from "@/assets/brands/casio.png";
+import seikoLogo from "@/assets/brands/seiko.png";
+import citizenLogo from "@/assets/brands/citizen.png";
+import fossilLogo from "@/assets/brands/fossil.png";
+import garminLogo from "@/assets/brands/garmin.svg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,30 +72,30 @@ const why = [
 ];
 
 const brandLogos = [
-  { name: "Nike", slug: "nike" },
-  { name: "Adidas", slug: "adidas" },
-  { name: "Puma", slug: "puma" },
-  { name: "Under Armour", slug: "underarmour" },
-  { name: "Apple", slug: "apple" },
-  { name: "Samsung", slug: "samsung" },
-  { name: "Xiaomi", slug: "xiaomi" },
-  { name: "Huawei", slug: "huawei" },
-  { name: "Sony", slug: "sony" },
-  { name: "LG", slug: "lg" },
-  { name: "HP", slug: "hp" },
-  { name: "Dell", slug: "dell" },
-  { name: "Lenovo", slug: "lenovo" },
-  { name: "Zara", slug: "zara" },
-  { name: "H&M", slug: "handm" },
-  { name: "Uniqlo", slug: "uniqlo" },
-  { name: "Rolex", slug: "rolex" },
-  { name: "Omega", slug: "omega" },
-  { name: "Tag Heuer", slug: "tagheuer" },
-  { name: "Casio", slug: "casio" },
-  { name: "Seiko", slug: "seiko" },
-  { name: "Citizen", slug: "citizen" },
-  { name: "Fossil", slug: "fossil" },
-  { name: "Tissot", slug: "tissot" },
+  { name: "Nike", logo: nikeLogo },
+  { name: "Adidas", logo: adidasLogo },
+  { name: "Puma", logo: pumaLogo },
+  { name: "Under Armour", logo: underArmourLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Samsung", logo: samsungLogo },
+  { name: "Xiaomi", logo: xiaomiLogo },
+  { name: "Huawei", logo: huaweiLogo },
+  { name: "Sony", logo: sonyLogo },
+  { name: "LG", logo: lgLogo },
+  { name: "HP", logo: hpLogo },
+  { name: "Dell", logo: dellLogo },
+  { name: "Lenovo", logo: lenovoLogo },
+  { name: "Zara", logo: zaraLogo },
+  { name: "H&M", logo: hmLogo },
+  { name: "Uniqlo", logo: uniqloLogo },
+  { name: "Rolex", logo: rolexLogo },
+  { name: "Omega", logo: omegaLogo },
+  { name: "TAG Heuer", logo: tagHeuerLogo },
+  { name: "Casio", logo: casioLogo },
+  { name: "Seiko", logo: seikoLogo },
+  { name: "Citizen", logo: citizenLogo },
+  { name: "Fossil", logo: fossilLogo },
+  { name: "Garmin", logo: garminLogo },
 ];
 
 
@@ -188,7 +212,7 @@ function Home() {
                   className="shrink-0 w-40 rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4"
                 >
                   <img
-                    src={`https://cdn.simpleicons.org/${b.slug}`}
+                    src={b.logo}
                     alt={`${b.name} logo`}
                     loading="lazy"
                     className="max-h-10 max-w-[80%] object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0"
