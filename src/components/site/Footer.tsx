@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Ship, Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram } from "lucide-react";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -55,7 +55,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-[oklch(0.75_0.02_245)]">
             <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5" /> <a href="mailto:info@chinasourcelink.com" className="hover:text-white">info@chinasourcelink.com</a></li>
             <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5" /> <a href="tel:+15715990628" className="hover:text-white">+1 (571) 599-0628</a></li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5" /> Yiwu, Zhejiang, China</li>
+            
           </ul>
           <h4 className="text-white text-sm font-semibold mb-3 mt-6">Legal</h4>
           <ul className="space-y-2 text-sm text-[oklch(0.75_0.02_245)]">
