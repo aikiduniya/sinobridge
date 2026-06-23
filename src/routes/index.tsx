@@ -46,17 +46,18 @@ const why = [
 ];
 
 const brandLogos = [
-  { name: "Nike", domain: "nike.com" },
-  { name: "Adidas", domain: "adidas.com" },
-  { name: "Puma", domain: "puma.com" },
-  { name: "Apple", domain: "apple.com" },
-  { name: "Samsung", domain: "samsung.com" },
-  { name: "Xiaomi", domain: "mi.com" },
-  { name: "Sony", domain: "sony.com" },
-  { name: "HP", domain: "hp.com" },
-  { name: "Dell", domain: "dell.com" },
-  { name: "Zara", domain: "zara.com" },
+  { name: "Nike", slug: "nike" },
+  { name: "Adidas", slug: "adidas" },
+  { name: "Puma", slug: "puma" },
+  { name: "Apple", slug: "apple" },
+  { name: "Samsung", slug: "samsung" },
+  { name: "Xiaomi", slug: "xiaomi" },
+  { name: "Sony", slug: "sony" },
+  { name: "HP", slug: "hp" },
+  { name: "Dell", slug: "dell" },
+  { name: "Zara", slug: "zara" },
 ];
+
 
 const steps = [
   "20% advance to start",
