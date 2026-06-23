@@ -172,11 +172,12 @@ function Home() {
                 className="rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4 hover:border-primary/40 transition-colors"
               >
                 <img
-                  src={`https://logo.clearbit.com/${b.domain}`}
+                  src={`https://cdn.simpleicons.org/${b.slug}`}
                   alt={`${b.name} logo`}
                   loading="lazy"
-                  className="max-h-10 max-w-[80%] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition"
+                  className="max-h-10 max-w-[80%] object-contain opacity-80 hover:opacity-100 transition"
                 />
+
               </div>
             ))}
           </div>
