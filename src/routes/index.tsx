@@ -507,3 +507,31 @@ function Stat({ big, small }: { big: string; small: string }) {
     </div>
   );
 }
+
+function HeroSlider() {
+  const slides = [
+    { src: heroImg, alt: "China shipping port with cargo containers" },
+    { src: heroFactoryImg, alt: "Modern Chinese manufacturing factory" },
+    { src: heroCargoImg, alt: "Cargo ship loaded with containers at port" },
+  ];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % slides.length), 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
+  return (
+    <div className="absolute inset-0">
+      {slides.map((s, i) => (
+        <img
+          key={s.src}
+          src={s.src}
+          alt={s.alt}
+          width={1920}
+          height={1080}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
+}
+
