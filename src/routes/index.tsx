@@ -381,18 +381,36 @@ function Home() {
 function ServicesSlider() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
+  const [paused, setPaused] = useState(false);
   const visible = 3;
   const total = services.length;
   const maxPage = Math.max(0, Math.ceil(total / visible) - 1);
 
   const scrollTo = (p: number) => {
-    const next = Math.max(0, Math.min(maxPage, p));
+    const next = ((p % (maxPage + 1)) + (maxPage + 1)) % (maxPage + 1);
     setPage(next);
     const track = trackRef.current;
     if (!track) return;
     const child = track.children[next * visible] as HTMLElement | undefined;
     if (child) track.scrollTo({ left: child.offsetLeft - track.offsetLeft, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setPage((p) => {
+        const next = (p + 1) % (maxPage + 1);
+        const track = trackRef.current;
+        if (track) {
+          const child = track.children[next * visible] as HTMLElement | undefined;
+          if (child) track.scrollTo({ left: child.offsetLeft - track.offsetLeft, behavior: "smooth" });
+        }
+        return next;
+      });
+    }, 4000);
+    return () => clearInterval(id);
+  }, [paused, maxPage]);
+
 
   return (
     <section className="py-20 bg-[image:var(--gradient-subtle)]">
