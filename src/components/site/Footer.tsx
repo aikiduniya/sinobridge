@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoImg from "@/assets/logo.png";
 import { Mail, Phone, Facebook, Instagram } from "lucide-react";
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -14,11 +15,8 @@ export function Footer() {
     <footer className="border-t border-border bg-[oklch(0.18_0.04_250)] text-[oklch(0.92_0.01_245)]">
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 font-display font-bold text-lg text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)]">
-              <Ship className="h-5 w-5" />
-            </span>
-            China SourceLink
+          <div className="bg-white rounded-lg inline-block p-2">
+            <img src={logoImg} alt="China SourceLink" className="h-12 w-auto" />
           </div>
           <p className="mt-4 text-sm text-[oklch(0.75_0.02_245)] leading-relaxed">
             Your trusted China sourcing & procurement partner — generic and branded products. Risk-free buying, end-to-end management.
