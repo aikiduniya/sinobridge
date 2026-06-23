@@ -103,10 +103,8 @@ function Home() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="China shipping port with cargo containers" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-90" />
-        </div>
+        <HeroSlider />
+        <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-70 pointer-events-none" />
         <div className="container-page relative py-24 md:py-32 text-white">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
