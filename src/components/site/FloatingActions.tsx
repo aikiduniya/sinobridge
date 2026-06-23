@@ -5,7 +5,7 @@ export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/8615900000000"
+        href="https://wa.me/15715990628"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
