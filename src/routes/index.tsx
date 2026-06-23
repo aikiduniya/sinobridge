@@ -180,21 +180,22 @@ function Home() {
               Need authentic branded goods, licensed merchandise or OEM/ODM products? We work with authorised distributors and verified factories to source the brand-name items your customers ask for.
             </p>
           </div>
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {brandLogos.map((b) => (
-              <div
-                key={b.name}
-                className="rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4 hover:border-primary/40 transition-colors"
-              >
-                <img
-                  src={`https://cdn.simpleicons.org/${b.slug}`}
-                  alt={`${b.name} logo`}
-                  loading="lazy"
-                  className="max-h-10 max-w-[80%] object-contain opacity-80 hover:opacity-100 transition"
-                />
-
-              </div>
-            ))}
+          <div className="mt-10 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <div className="flex gap-4 w-max animate-brand-marquee hover:[animation-play-state:paused]">
+              {[...brandLogos, ...brandLogos].map((b, i) => (
+                <div
+                  key={`${b.name}-${i}`}
+                  className="shrink-0 w-40 rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4"
+                >
+                  <img
+                    src={`https://cdn.simpleicons.org/${b.slug}`}
+                    alt={`${b.name} logo`}
+                    loading="lazy"
+                    className="max-h-10 max-w-[80%] object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">
             Brand names shown are trademarks of their respective owners and are referenced only to illustrate categories of products we have helped clients source.
