@@ -31,12 +31,12 @@ import zaraLogo from "@/assets/brands/zara.svg";
 import hmLogo from "@/assets/brands/hm.svg";
 import uniqloLogo from "@/assets/brands/uniqlo.svg";
 import rolexLogo from "@/assets/brands/rolex.svg";
-import omegaLogo from "@/assets/brands/omega.png";
-import tagHeuerLogo from "@/assets/brands/tag-heuer.png";
-import casioLogo from "@/assets/brands/casio.png";
-import seikoLogo from "@/assets/brands/seiko.png";
-import citizenLogo from "@/assets/brands/citizen.png";
-import fossilLogo from "@/assets/brands/fossil.png";
+import omegaLogo from "@/assets/brands/omega.svg";
+import tagHeuerLogo from "@/assets/brands/tag-heuer.svg";
+import casioLogo from "@/assets/brands/casio.svg";
+import seikoLogo from "@/assets/brands/seiko.svg";
+import citizenLogo from "@/assets/brands/citizen.svg";
+import fossilLogo from "@/assets/brands/fossil.svg";
 import garminLogo from "@/assets/brands/garmin.svg";
 
 export const Route = createFileRoute("/")({
