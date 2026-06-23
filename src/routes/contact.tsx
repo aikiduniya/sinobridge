@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { InquiryForm } from "@/components/site/InquiryForm";
-import { Mail, Phone, MapPin, MessageCircle, Clock, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MessageCircle, Clock, Facebook, Instagram } from "lucide-react";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -46,7 +46,7 @@ function ContactPage() {
           <aside className="lg:col-span-2 space-y-5">
             <InfoCard icon={Mail} title="Email Support" lines={["info@chinasourcelink.com"]} />
             <InfoCard icon={Phone} title="Call / WhatsApp" lines={["+1 (571) 599-0628"]} />
-            <InfoCard icon={MapPin} title="Office" lines={["International Trade Mart", "Yiwu, Zhejiang, China"]} />
+            
             <InfoCard icon={Clock} title="Response Time" lines={["Within 12–24 hours, Mon–Sat"]} />
 
             <a

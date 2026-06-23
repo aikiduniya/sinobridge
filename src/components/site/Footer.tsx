@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Ship, Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import logoImg from "@/assets/logo.png";
+import { Mail, Phone, Facebook, Instagram } from "lucide-react";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -14,11 +15,8 @@ export function Footer() {
     <footer className="border-t border-border bg-[oklch(0.18_0.04_250)] text-[oklch(0.92_0.01_245)]">
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 font-display font-bold text-lg text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)]">
-              <Ship className="h-5 w-5" />
-            </span>
-            China SourceLink
+          <div className="bg-white rounded-lg inline-block p-2">
+            <img src={logoImg} alt="China SourceLink" className="h-12 w-auto" />
           </div>
           <p className="mt-4 text-sm text-[oklch(0.75_0.02_245)] leading-relaxed">
             Your trusted China sourcing & procurement partner — generic and branded products. Risk-free buying, end-to-end management.
@@ -55,7 +53,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-[oklch(0.75_0.02_245)]">
             <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5" /> <a href="mailto:info@chinasourcelink.com" className="hover:text-white">info@chinasourcelink.com</a></li>
             <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5" /> <a href="tel:+15715990628" className="hover:text-white">+1 (571) 599-0628</a></li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5" /> Yiwu, Zhejiang, China</li>
+            
           </ul>
           <h4 className="text-white text-sm font-semibold mb-3 mt-6">Legal</h4>
           <ul className="space-y-2 text-sm text-[oklch(0.75_0.02_245)]">

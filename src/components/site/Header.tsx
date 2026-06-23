@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Ship } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -18,11 +19,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-display font-bold text-lg">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground">
-            <Ship className="h-5 w-5" />
-          </span>
-          <span>SinoBridge<span className="text-primary"> Sourcing</span></span>
+        <Link to="/" className="flex items-center" aria-label="China SourceLink home">
+          <img src={logoImg} alt="China SourceLink — Global B2B Sourcing & Logistics" className="h-11 md:h-12 w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
           {navItems.map((i) => (

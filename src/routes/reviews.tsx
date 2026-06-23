@@ -20,7 +20,7 @@ interface Review {
 }
 
 const seedReviews: Review[] = [
-  { name: "Michael Reynolds", role: "Founder", country: "USA", rating: 5, text: "The 20/80 payment model gave us total peace of mind on our first container. Shipment arrived inspected and on schedule. SinoBridge feels like our China office.", date: "Mar 2026" },
+  { name: "Michael Reynolds", role: "Founder", country: "USA", rating: 5, text: "The 20/80 payment model gave us total peace of mind on our first container. Shipment arrived inspected and on schedule. China SourceLink feels like our China office.", date: "Mar 2026" },
   { name: "Sara Khalifa", role: "Procurement Head, Retail Chain", country: "UAE", rating: 5, text: "Their negotiation team got us 18% below our previous prices and handled every customs document. Truly transparent and professional.", date: "Feb 2026" },
   { name: "Lukas Hartmann", role: "E-commerce Owner", country: "Germany", rating: 5, text: "Professional, transparent and fast. They feel like an extension of our own team in China. Inspection reports caught issues we would have missed.", date: "Jan 2026" },
   { name: "Aiko Tanaka", role: "Buyer", country: "Japan", rating: 4, text: "Great supplier verification work. Saved us from a fraudulent factory and found a much better alternative within two weeks.", date: "Dec 2025" },
@@ -39,9 +39,9 @@ const reviewSchema = z.object({
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Client Reviews — SinoBridge China Sourcing Agency" },
-      { name: "description", content: "Real reviews from importers worldwide. Share your experience with SinoBridge or read what global buyers say about our China sourcing service." },
-      { property: "og:title", content: "Client Reviews — SinoBridge" },
+      { title: "Client Reviews — China SourceLink China Sourcing Agency" },
+      { name: "description", content: "Real reviews from importers worldwide. Share your experience with China SourceLink or read what global buyers say about our China sourcing service." },
+      { property: "og:title", content: "Client Reviews — China SourceLink" },
       { property: "og:description", content: "Trusted by importers in 35+ countries." },
       { property: "og:url", content: "/reviews" },
     ],
@@ -96,7 +96,7 @@ function ReviewsPage() {
       <PageHero
         eyebrow="Client Reviews"
         title="Trusted by importers in 35+ countries"
-        subtitle="Read what global buyers say about working with SinoBridge — and share your own experience."
+        subtitle="Read what global buyers say about working with China SourceLink — and share your own experience."
       />
 
       {/* Summary */}
@@ -195,7 +195,7 @@ function ReviewsPage() {
                 </div>
                 <div className="grid gap-1.5">
                   <Label htmlFor="r-text">Your Review</Label>
-                  <Textarea id="r-text" name="text" rows={5} required placeholder="Tell others about your experience with SinoBridge..." />
+                  <Textarea id="r-text" name="text" rows={5} required placeholder="Tell others about your experience with China SourceLink..." />
                 </div>
                 <Button type="submit" disabled={submitting} size="lg" className="bg-[image:var(--gradient-primary)] h-12">
                   {submitting ? "Posting..." : "Post Review"}

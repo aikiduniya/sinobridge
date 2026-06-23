@@ -45,8 +45,17 @@ const why = [
   { icon: Zap, title: "Fast Global Response", desc: "12–24h response, English-speaking account managers." },
 ];
 
-const brandNames = [
-  "Nike", "Adidas", "Puma", "Apple", "Samsung", "Xiaomi", "Sony", "HP", "Dell", "Zara",
+const brandLogos = [
+  { name: "Nike", domain: "nike.com" },
+  { name: "Adidas", domain: "adidas.com" },
+  { name: "Puma", domain: "puma.com" },
+  { name: "Apple", domain: "apple.com" },
+  { name: "Samsung", domain: "samsung.com" },
+  { name: "Xiaomi", domain: "mi.com" },
+  { name: "Sony", domain: "sony.com" },
+  { name: "HP", domain: "hp.com" },
+  { name: "Dell", domain: "dell.com" },
+  { name: "Zara", domain: "zara.com" },
 ];
 
 const steps = [
@@ -156,12 +165,17 @@ function Home() {
             </p>
           </div>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {brandNames.map((b) => (
+            {brandLogos.map((b) => (
               <div
-                key={b}
-                className="rounded-xl border border-border bg-card px-4 py-6 text-center text-lg font-display font-bold tracking-tight text-foreground/80 hover:text-primary hover:border-primary/40 transition-colors"
+                key={b.name}
+                className="rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4 hover:border-primary/40 transition-colors"
               >
-                {b}
+                <img
+                  src={`https://logo.clearbit.com/${b.domain}`}
+                  alt={`${b.name} logo`}
+                  loading="lazy"
+                  className="max-h-10 max-w-[80%] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition"
+                />
               </div>
             ))}
           </div>

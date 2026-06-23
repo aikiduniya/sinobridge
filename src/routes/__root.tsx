@@ -73,7 +73,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-      { title: "SinoBridge — Trusted China Sourcing & Procurement Agency" },
+      { title: "China SourceLink — Trusted China Sourcing & Procurement Agency" },
       {
         name: "description",
         content:
