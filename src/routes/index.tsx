@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/Layout";
 import { InquiryForm } from "@/components/site/InquiryForm";
@@ -9,6 +9,8 @@ import {
   ShieldCheck, Handshake, Boxes, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-port.jpg";
+import heroFactoryImg from "@/assets/hero-factory.jpg";
+import heroCargoImg from "@/assets/hero-cargo.jpg";
 import factoryImg from "@/assets/factory.jpg";
 import inspectionImg from "@/assets/inspection.jpg";
 import { services } from "@/data/services";
