@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ loaderData }) => {
     const s = loaderData?.service;
-    const title = s ? `${s.title} — SinoBridge` : "Service — SinoBridge";
+    const title = s ? `${s.title} — China SourceLink` : "Service — China SourceLink";
     const desc = s?.short ?? "China sourcing service detail.";
     return {
       meta: [

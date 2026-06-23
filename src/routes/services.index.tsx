@@ -8,9 +8,9 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — China Sourcing, Inspection & Shipping | SinoBridge" },
+      { title: "Services — China Sourcing, Inspection & Shipping | China SourceLink" },
       { name: "description", content: "Full China procurement services: sourcing, supplier verification, negotiation, quality inspection, order management and global shipping." },
-      { property: "og:title", content: "Services — SinoBridge" },
+      { property: "og:title", content: "Services — China SourceLink" },
       { property: "og:description", content: "End-to-end procurement: sourcing, verification, QC and logistics." },
       { property: "og:url", content: "/services" },
     ],

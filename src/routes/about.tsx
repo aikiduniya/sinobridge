@@ -8,9 +8,9 @@ import factoryImg from "@/assets/factory.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — SinoBridge China Sourcing Agency" },
+      { title: "About Us — China SourceLink China Sourcing Agency" },
       { name: "description", content: "Professional China sourcing and procurement agency helping global businesses import products safely and efficiently from China." },
-      { property: "og:title", content: "About Us — SinoBridge" },
+      { property: "og:title", content: "About Us — China SourceLink" },
       { property: "og:description", content: "Our mission, vision and commitment to risk-free China trade." },
       { property: "og:url", content: "/about" },
     ],
@@ -38,7 +38,7 @@ function AboutPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="About SinoBridge"
+        eyebrow="About China SourceLink"
         title="Professional China sourcing & procurement, built on trust"
         subtitle="We help global businesses import products safely and efficiently from China through a transparent, risk-free model."
       />
@@ -49,7 +49,7 @@ function AboutPage() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">Who we are</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              SinoBridge is a China-based sourcing and procurement agency serving clients from the USA, Europe, Asia and the Middle East. Our local team combines deep manufacturing know-how with international business standards, removing the language, cultural and logistical barriers that make China sourcing risky for foreign buyers.
+              China SourceLink is a China-based sourcing and procurement agency serving clients from the USA, Europe, Asia and the Middle East. Our local team combines deep manufacturing know-how with international business standards, removing the language, cultural and logistical barriers that make China sourcing risky for foreign buyers.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               We've spent more than a decade building a verified supplier network and refining a buying model that puts your safety first. When you work with us, you get a single accountable partner from first inquiry to final delivery.

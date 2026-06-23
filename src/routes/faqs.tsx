@@ -52,9 +52,9 @@ const groups = [
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs — China Sourcing & Procurement Questions | SinoBridge" },
+      { title: "FAQs — China Sourcing & Procurement Questions | China SourceLink" },
       { name: "description", content: "Answers to common questions about China sourcing: payment model, inspection, shipping, fees, suppliers, customs and more." },
-      { property: "og:title", content: "FAQs — SinoBridge" },
+      { property: "og:title", content: "FAQs — China SourceLink" },
       { property: "og:description", content: "Everything global buyers ask about importing from China." },
       { property: "og:url", content: "/faqs" },
     ],

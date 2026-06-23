@@ -7,9 +7,9 @@ import { ShieldCheck, Eye, Globe2, BadgeCheck } from "lucide-react";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — Risk-Free China Sourcing Process | SinoBridge" },
+      { title: "How It Works — Risk-Free China Sourcing Process | China SourceLink" },
       { name: "description", content: "Step-by-step China sourcing process: inquiry, sourcing, 20% advance, purchase, inspection, shipping, delivery and final 80% payment." },
-      { property: "og:title", content: "How It Works — SinoBridge" },
+      { property: "og:title", content: "How It Works — China SourceLink" },
       { property: "og:description", content: "A transparent 10-step procurement process built around buyer safety." },
       { property: "og:url", content: "/how-it-works" },
     ],
