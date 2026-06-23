@@ -413,7 +413,11 @@ function ServicesSlider() {
 
 
   return (
-    <section className="py-20 bg-[image:var(--gradient-subtle)]">
+    <section
+      className="py-20 bg-[image:var(--gradient-subtle)]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="container-page">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
@@ -424,22 +428,21 @@ function ServicesSlider() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scrollTo(page - 1)}
-              disabled={page === 0}
               aria-label="Previous services"
-              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary transition"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => scrollTo(page + 1)}
-              disabled={page >= maxPage}
               aria-label="Next services"
-              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-secondary transition"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
+
 
         <div
           ref={trackRef}
