@@ -46,17 +46,18 @@ const why = [
 ];
 
 const brandLogos = [
-  { name: "Nike", domain: "nike.com" },
-  { name: "Adidas", domain: "adidas.com" },
-  { name: "Puma", domain: "puma.com" },
-  { name: "Apple", domain: "apple.com" },
-  { name: "Samsung", domain: "samsung.com" },
-  { name: "Xiaomi", domain: "mi.com" },
-  { name: "Sony", domain: "sony.com" },
-  { name: "HP", domain: "hp.com" },
-  { name: "Dell", domain: "dell.com" },
-  { name: "Zara", domain: "zara.com" },
+  { name: "Nike", slug: "nike" },
+  { name: "Adidas", slug: "adidas" },
+  { name: "Puma", slug: "puma" },
+  { name: "Apple", slug: "apple" },
+  { name: "Samsung", slug: "samsung" },
+  { name: "Xiaomi", slug: "xiaomi" },
+  { name: "Sony", slug: "sony" },
+  { name: "HP", slug: "hp" },
+  { name: "Dell", slug: "dell" },
+  { name: "Zara", slug: "zara" },
 ];
+
 
 const steps = [
   "20% advance to start",
@@ -171,11 +172,12 @@ function Home() {
                 className="rounded-xl border border-border bg-card h-24 flex items-center justify-center px-4 hover:border-primary/40 transition-colors"
               >
                 <img
-                  src={`https://logo.clearbit.com/${b.domain}`}
+                  src={`https://cdn.simpleicons.org/${b.slug}`}
                   alt={`${b.name} logo`}
                   loading="lazy"
-                  className="max-h-10 max-w-[80%] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition"
+                  className="max-h-10 max-w-[80%] object-contain opacity-80 hover:opacity-100 transition"
                 />
+
               </div>
             ))}
           </div>
