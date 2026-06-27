@@ -32,50 +32,19 @@ import inspectionImg from "@/assets/inspection.jpg";
 import { services } from "@/data/services";
 import nikeLogo from "@/assets/brands/nike.svg";
 import adidasLogo from "@/assets/brands/adidas.svg";
-import pumaLogo from "@/assets/brands/puma.svg";
-import underArmourLogo from "@/assets/brands/under-armour.svg";
 import appleLogo from "@/assets/brands/apple.svg";
 import samsungLogo from "@/assets/brands/samsung.svg";
-import xiaomiLogo from "@/assets/brands/xiaomi.svg";
-import huaweiLogo from "@/assets/brands/huawei.svg";
-
-import lgLogo from "@/assets/brands/lg.svg";
-import hpLogo from "@/assets/brands/hp.svg";
-import dellLogo from "@/assets/brands/dell.svg";
 import lenovoLogo from "@/assets/brands/lenovo.svg";
-import zaraLogo from "@/assets/brands/zara.svg";
 import hmLogo from "@/assets/brands/hm.svg";
-import uniqloLogo from "@/assets/brands/uniqlo.svg";
 import rolexLogo from "@/assets/brands/rolex.svg";
-import omegaLogo from "@/assets/brands/omega.svg";
-import tagHeuerLogo from "@/assets/brands/tag-heuer.svg";
 import casioLogo from "@/assets/brands/casio.svg";
-import seikoLogo from "@/assets/brands/seiko.svg";
-import citizenLogo from "@/assets/brands/citizen.svg";
-import fossilLogo from "@/assets/brands/fossil.svg";
-import garminLogo from "@/assets/brands/garmin.svg";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "China SourceLink — Trusted China Sourcing & Procurement Agency" },
-      {
-        name: "description",
-        content:
-          "Source products & branded goods from China with full trust. Supplier verification, quality inspection, negotiation & global shipping. Risk-free 20/80 payment model.",
-      },
-      { property: "og:title", content: "China SourceLink — Trusted China Sourcing & Procurement Agency" },
-      {
-        property: "og:description",
-        content:
-          "End-to-end China sourcing — generic and branded products. Risk-free buying. Transparent 10% service fee.",
-      },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Home,
-});
+import louisVuittonLogo from "@/assets/brands/louis-vuitton.svg";
+import hermesLogo from "@/assets/brands/hermes.svg";
+import coachLogo from "@/assets/brands/coach.svg";
+import cartierLogo from "@/assets/brands/cartier.svg";
+import pradaLogo from "@/assets/brands/prada.svg";
+import chanelLogo from "@/assets/brands/chanel.svg";
+import calvinKleinLogo from "@/assets/brands/calvin-klein.svg";
 
 const industries = [
   { icon: Cpu, label: "Electronics" },
@@ -87,11 +56,7 @@ const industries = [
 ];
 
 const why = [
-  {
-    icon: ShieldCheck,
-    title: "Verified Supplier Network",
-    desc: "Vetted manufacturers across all major Chinese hubs.",
-  },
+  { icon: ShieldCheck, title: "Verified Supplier Network", desc: "Vetted manufacturers across all major Chinese hubs." },
   { icon: Handshake, title: "Strong Negotiation Power", desc: "Local team, native language, factory-direct pricing." },
   { icon: Award, title: "Quality Guaranteed", desc: "Independent inspection before any payment is released." },
   { icon: ShieldCheck, title: "Risk-Free Buying Model", desc: "Only 20% advance — pay the rest after delivery." },
@@ -100,31 +65,23 @@ const why = [
 ];
 
 const brandLogos = [
-  { name: "Nike", logo: nikeLogo },
+  { name: "Louis Vuitton", logo: louisVuittonLogo },
+  { name: "Hermès", logo: hermesLogo },
+  { name: "Coach", logo: coachLogo },
   { name: "Adidas", logo: adidasLogo },
-  { name: "Puma", logo: pumaLogo },
-  { name: "Under Armour", logo: underArmourLogo },
-  { name: "Apple", logo: appleLogo },
-  { name: "Samsung", logo: samsungLogo },
-  { name: "Xiaomi", logo: xiaomiLogo },
-  { name: "Huawei", logo: huaweiLogo },
-
-  { name: "LG", logo: lgLogo },
-  { name: "HP", logo: hpLogo },
-  { name: "Dell", logo: dellLogo },
-  { name: "Lenovo", logo: lenovoLogo },
-  { name: "Zara", logo: zaraLogo },
+  { name: "Nike", logo: nikeLogo },
   { name: "H&M", logo: hmLogo },
-  { name: "Uniqlo", logo: uniqloLogo },
+  { name: "Cartier", logo: cartierLogo },
   { name: "Rolex", logo: rolexLogo },
-  { name: "Omega", logo: omegaLogo },
-  { name: "TAG Heuer", logo: tagHeuerLogo },
+  { name: "Prada", logo: pradaLogo },
   { name: "Casio", logo: casioLogo },
-  { name: "Seiko", logo: seikoLogo },
-  { name: "Citizen", logo: citizenLogo },
-  { name: "Fossil", logo: fossilLogo },
-  { name: "Garmin", logo: garminLogo },
+  { name: "Chanel", logo: chanelLogo },
+  { name: "Calvin Klein", logo: calvinKleinLogo },
+  { name: "Samsung", logo: samsungLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Lenovo", logo: lenovoLogo },
 ];
+
 
 const steps = [
   "20% advance to start",
