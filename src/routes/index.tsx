@@ -46,6 +46,41 @@ import pradaLogo from "@/assets/brands/prada.svg";
 import chanelLogo from "@/assets/brands/chanel.svg";
 import calvinKleinLogo from "@/assets/brands/calvin-klein.svg";
 
+const industries = [
+  { icon: Cpu, label: "Electronics" },
+  { icon: Shirt, label: "Textiles & Garments" },
+  { icon: Wrench, label: "Machinery & Industrial" },
+  { icon: UtensilsCrossed, label: "Home & Kitchen" },
+  { icon: Car, label: "Automotive Parts" },
+  { icon: Settings2, label: "Custom Manufacturing" },
+];
+
+const why = [
+  { icon: ShieldCheck, title: "Verified Supplier Network", desc: "Vetted manufacturers across all major Chinese hubs." },
+  { icon: Handshake, title: "Strong Negotiation Power", desc: "Local team, native language, factory-direct pricing." },
+  { icon: Award, title: "Quality Guaranteed", desc: "Independent inspection before any payment is released." },
+  { icon: ShieldCheck, title: "Risk-Free Buying Model", desc: "Only 20% advance — pay the rest after delivery." },
+  { icon: Boxes, title: "End-to-End Management", desc: "Sourcing, QC, shipping, customs — all in one place." },
+  { icon: Zap, title: "Fast Global Response", desc: "12–24h response, English-speaking account managers." },
+];
+
+const brandLogos = [
+  { name: "Louis Vuitton", logo: louisVuittonLogo },
+  { name: "Hermès", logo: hermesLogo },
+  { name: "Coach", logo: coachLogo },
+  { name: "Adidas", logo: adidasLogo },
+  { name: "Nike", logo: nikeLogo },
+  { name: "H&M", logo: hmLogo },
+  { name: "Cartier", logo: cartierLogo },
+  { name: "Rolex", logo: rolexLogo },
+  { name: "Prada", logo: pradaLogo },
+  { name: "Casio", logo: casioLogo },
+  { name: "Chanel", logo: chanelLogo },
+  { name: "Calvin Klein", logo: calvinKleinLogo },
+  { name: "Samsung", logo: samsungLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Lenovo", logo: lenovoLogo },
+];
 
 
 const steps = [
