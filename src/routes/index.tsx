@@ -646,3 +646,8 @@ function HeroSlider() {
     </div>
   );
 }
+
+export const Route = createFileRoute("/")({
+  component: Home,
+});
+
