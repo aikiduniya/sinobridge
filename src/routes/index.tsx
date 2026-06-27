@@ -85,30 +85,14 @@ const why = [
 ];
 
 const brandLogos = [
-  { name: "Nike", logo: nikeLogo },
+  { name: "Louis Vuitton", logo: lvLogo },
+  { name: "Hermès", logo: hermesLogo },
+  { name: "Coach", logo: coachLogo },
   { name: "Adidas", logo: adidasLogo },
-  { name: "Puma", logo: pumaLogo },
-  { name: "Under Armour", logo: underArmourLogo },
-  { name: "Apple", logo: appleLogo },
-  { name: "Samsung", logo: samsungLogo },
-  { name: "Xiaomi", logo: xiaomiLogo },
-  { name: "Huawei", logo: huaweiLogo },
-
-  { name: "LG", logo: lgLogo },
-  { name: "HP", logo: hpLogo },
-  { name: "Dell", logo: dellLogo },
-  { name: "Lenovo", logo: lenovoLogo },
-  { name: "Zara", logo: zaraLogo },
+  { name: "Nike", logo: nikeLogo },
   { name: "H&M", logo: hmLogo },
-  { name: "Uniqlo", logo: uniqloLogo },
+  { name: "Cartier", logo: cartierLogo },
   { name: "Rolex", logo: rolexLogo },
-  { name: "Omega", logo: omegaLogo },
-  { name: "TAG Heuer", logo: tagHeuerLogo },
-  { name: "Casio", logo: casioLogo },
-  { name: "Seiko", logo: seikoLogo },
-  { name: "Citizen", logo: citizenLogo },
-  { name: "Fossil", logo: fossilLogo },
-  { name: "Garmin", logo: garminLogo },
 ];
 
 const steps = [
