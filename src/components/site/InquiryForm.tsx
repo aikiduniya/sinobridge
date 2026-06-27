@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
@@ -18,9 +19,10 @@ const schema = z.object({
 export function InquiryForm({ compact = false }: { compact?: boolean }) {
   const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = schema.safeParse({
       name: fd.get("name"),
       email: fd.get("email"),
@@ -34,11 +36,19 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
       return;
     }
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const { error } = await supabase.functions.invoke("send-inquiry", {
+        body: parsed.data,
+      });
+      if (error) throw error;
+      form.reset();
       toast.success("Inquiry received. Our team will respond within 12–24 hours.");
-    }, 700);
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not send your inquiry. Please try again or email info@chinasourcelink.com.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
