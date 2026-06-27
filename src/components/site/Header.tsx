@@ -18,9 +18,9 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="container-page flex h-28 md:h-36 items-center justify-between">
+      <div className="container-page flex h-20 md:h-24 items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="China SourceLink home">
-          <img src={logoImg} alt="China SourceLink — Global B2B Sourcing & Logistics" className="h-24 md:h-32 w-auto" />
+          <img src={logoImg} alt="China SourceLink — Global B2B Sourcing & Logistics" className="h-16 md:h-20 w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
           {navItems.map((i) => (
