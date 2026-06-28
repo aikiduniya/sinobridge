@@ -48,22 +48,28 @@ function ContactPage() {
 
           <aside className="lg:col-span-2 space-y-5">
             <InfoCard icon={Mail} title="Email Support" lines={["info@chinasourcelink.com"]} />
-            <InfoCard icon={Phone} title="Call / WhatsApp" lines={["+1 (571) 599-0628"]} />
-            
+            <InfoCard icon={Phone} title="Call / WhatsApp (USA)" lines={["+1 (571) 599-0628"]} />
+            <InfoCard icon={Phone} title="Call / WhatsApp (China)" lines={["+86 137 5990 8851"]} />
             <InfoCard icon={Clock} title="Response Time" lines={["Within 12–24 hours, Mon–Sat"]} />
 
-            <a
-              href="https://wa.me/15715990628"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-2xl bg-[oklch(0.65_0.17_150)] text-white p-5 hover:opacity-95 transition-opacity"
+            <button
+              type="button"
+              onClick={() => {
+                const choice = window.prompt(
+                  "Chat on WhatsApp — choose a number:\n\n1. USA / International: +1 (571) 599-0628\n2. China (Sales): +86 137 5990 8851\n\nType 1 or 2:",
+                  "1"
+                );
+                if (choice === "1") window.open("https://wa.me/15715990628", "_blank", "noopener");
+                else if (choice === "2") window.open("https://wa.me/8613759908851", "_blank", "noopener");
+              }}
+              className="w-full text-left flex items-center gap-3 rounded-2xl bg-[oklch(0.65_0.17_150)] text-white p-5 hover:opacity-95 transition-opacity"
             >
               <MessageCircle className="h-6 w-6" />
               <div>
                 <div className="font-semibold">Chat on WhatsApp</div>
-                <div className="text-sm text-white/85">Fastest way to reach our team</div>
+                <div className="text-sm text-white/85">Choose USA or China number</div>
               </div>
-            </a>
+            </button>
 
             <div className="rounded-2xl border border-border bg-card p-5">
               <div className="text-sm font-semibold mb-3">Follow us</div>
