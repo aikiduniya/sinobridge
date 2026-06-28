@@ -20,12 +20,54 @@ interface Review {
 }
 
 const seedReviews: Review[] = [
-  { name: "Michael Reynolds", role: "Founder", country: "USA", rating: 5, text: "The 20/80 payment model gave us total peace of mind on our first container. Shipment arrived inspected and on schedule. China SourceLink feels like our China office.", date: "Mar 2026" },
-  { name: "Sara Khalifa", role: "Procurement Head, Retail Chain", country: "UAE", rating: 5, text: "Their negotiation team got us 18% below our previous prices and handled every customs document. Truly transparent and professional.", date: "Feb 2026" },
-  { name: "Lukas Hartmann", role: "E-commerce Owner", country: "Germany", rating: 5, text: "Professional, transparent and fast. They feel like an extension of our own team in China. Inspection reports caught issues we would have missed.", date: "Jan 2026" },
-  { name: "Aiko Tanaka", role: "Buyer", country: "Japan", rating: 4, text: "Great supplier verification work. Saved us from a fraudulent factory and found a much better alternative within two weeks.", date: "Dec 2025" },
-  { name: "Carlos Mendes", role: "Importer", country: "Brazil", rating: 5, text: "End-to-end service is exactly what we needed. One invoice, one contact, zero stress. Highly recommended for first-time China buyers.", date: "Nov 2025" },
-  { name: "Priya Sharma", role: "Brand Owner", country: "India", rating: 5, text: "Custom OEM project was handled brilliantly. Samples, tooling, packaging — every step communicated clearly. Will use them for every reorder.", date: "Oct 2025" },
+  {
+    name: "Michael Reynolds",
+    role: "Founder",
+    country: "USA",
+    rating: 5,
+    text: "The 20/80 payment model gave us total peace of mind on our first container. Shipment arrived inspected and on schedule. China SourceLink feels like our China office.",
+    date: "Mar 2026",
+  },
+  {
+    name: "Sara Khalifa",
+    role: "Procurement Head, Retail Chain",
+    country: "UAE",
+    rating: 5,
+    text: "Their negotiation team got us 18% below our previous prices and handled every customs document. Truly transparent and professional.",
+    date: "Feb 2026",
+  },
+  {
+    name: "Lukas Hartmann",
+    role: "E-commerce Owner",
+    country: "Germany",
+    rating: 5,
+    text: "Professional, transparent and fast. They feel like an extension of our own team in China. Inspection reports caught issues we would have missed.",
+    date: "Jan 2026",
+  },
+  {
+    name: "Aiko Tanaka",
+    role: "Buyer",
+    country: "Japan",
+    rating: 4,
+    text: "Great supplier verification work. Saved us from a fraudulent factory and found a much better alternative within two weeks.",
+    date: "Dec 2025",
+  },
+  {
+    name: "Carlos Mendes",
+    role: "Importer",
+    country: "Brazil",
+    rating: 5,
+    text: "End-to-end service is exactly what we needed. One invoice, one contact, zero stress. Highly recommended for first-time China buyers.",
+    date: "Nov 2025",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Brand Owner",
+    country: "India",
+    rating: 5,
+    text: "Custom OEM project was handled brilliantly. Samples, tooling, packaging — every step communicated clearly. Will use them for every reorder.",
+    date: "Oct 2025",
+  },
 ];
 
 const reviewSchema = z.object({
@@ -40,8 +82,16 @@ export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
       { title: "Client Reviews & Testimonials — China SourceLink Sourcing Agency" },
-      { name: "description", content: "Real reviews from importers in 35+ countries. Read what global buyers say about China SourceLink — and share your own China sourcing experience." },
-      { name: "keywords", content: "China SourceLink reviews, China sourcing agent reviews, China procurement testimonials, importer feedback, trusted China buying agent reviews" },
+      {
+        name: "description",
+        content:
+          "Real reviews from importers in 35+ countries. Read what global buyers say about China SourceLink — and share your own China sourcing experience.",
+      },
+      {
+        name: "keywords",
+        content:
+          "China SourceLink reviews, China sourcing agent reviews, China procurement testimonials, importer feedback, trusted China buying agent reviews",
+      },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Client Reviews — China SourceLink" },
       { property: "og:description", content: "Trusted by importers in 35+ countries." },
@@ -109,13 +159,17 @@ function ReviewsPage() {
             <div className="text-center md:text-left">
               <div className="text-6xl font-bold text-primary">{avg.toFixed(1)}</div>
               <div className="flex gap-1 text-[oklch(0.78_0.13_75)] mt-2 justify-center md:justify-start">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
               </div>
-              <div className="mt-2 text-sm text-muted-foreground">Average rating — based on {reviews.length} reviews</div>
+              <div className="mt-2 text-sm text-muted-foreground">
+                Average rating — based on {reviews.length} reviews
+              </div>
             </div>
             <div className="md:col-span-2 grid grid-cols-3 gap-6 text-center">
               {[
-                ["500+", "Global clients"],
+                ["100+", "Global clients"],
                 ["98%", "Client satisfaction"],
                 ["35+", "Countries served"],
               ].map(([n, l]) => (
@@ -136,15 +190,24 @@ function ReviewsPage() {
           <div className="lg:col-span-2 space-y-5">
             <h2 className="text-2xl font-bold">What our clients say</h2>
             {reviews.map((r, i) => (
-              <article key={i} className="rounded-2xl bg-card border border-border p-6 md:p-7 shadow-[var(--shadow-card)]">
+              <article
+                key={i}
+                className="rounded-2xl bg-card border border-border p-6 md:p-7 shadow-[var(--shadow-card)]"
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div className="grid h-11 w-11 place-items-center rounded-full bg-[image:var(--gradient-primary)] text-primary-foreground font-bold">
-                      {r.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                      {r.name
+                        .split(" ")
+                        .map((p) => p[0])
+                        .slice(0, 2)
+                        .join("")}
                     </div>
                     <div>
                       <div className="font-semibold">{r.name}</div>
-                      <div className="text-xs text-muted-foreground">{r.role} · {r.country}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {r.role} · {r.country}
+                      </div>
                     </div>
                   </div>
                   <div className="text-right">
@@ -191,19 +254,34 @@ function ReviewsPage() {
                         aria-label={`Rate ${n} stars`}
                         className="p-1"
                       >
-                        <Star className={`h-7 w-7 transition-colors ${n <= rating ? "text-[oklch(0.78_0.13_75)] fill-current" : "text-muted-foreground/40"}`} />
+                        <Star
+                          className={`h-7 w-7 transition-colors ${n <= rating ? "text-[oklch(0.78_0.13_75)] fill-current" : "text-muted-foreground/40"}`}
+                        />
                       </button>
                     ))}
                   </div>
                 </div>
                 <div className="grid gap-1.5">
                   <Label htmlFor="r-text">Your Review</Label>
-                  <Textarea id="r-text" name="text" rows={5} required placeholder="Tell others about your experience with China SourceLink..." />
+                  <Textarea
+                    id="r-text"
+                    name="text"
+                    rows={5}
+                    required
+                    placeholder="Tell others about your experience with China SourceLink..."
+                  />
                 </div>
-                <Button type="submit" disabled={submitting} size="lg" className="bg-[image:var(--gradient-primary)] h-12">
+                <Button
+                  type="submit"
+                  disabled={submitting}
+                  size="lg"
+                  className="bg-[image:var(--gradient-primary)] h-12"
+                >
                   {submitting ? "Posting..." : "Post Review"}
                 </Button>
-                <p className="text-xs text-muted-foreground">Reviews are moderated. Display only — not stored permanently in this preview.</p>
+                <p className="text-xs text-muted-foreground">
+                  Reviews are moderated. Display only — not stored permanently in this preview.
+                </p>
               </form>
             </div>
           </aside>
