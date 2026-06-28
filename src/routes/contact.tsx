@@ -15,7 +15,7 @@ function TikTokIcon({ className }: { className?: string }) {
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Get a Free China Sourcing Quote | China SourceLink" },
+      { title: "Contact China SourceLink — Free Sourcing Quote" },
       { name: "description", content: "Contact China SourceLink for a free China sourcing quote within 12–24 hours. WhatsApp, email and inquiry form available — USA & China teams." },
       { name: "keywords", content: "contact China SourceLink, China sourcing quote, China procurement contact, free sourcing quote China, China buying agent contact" },
       { property: "og:type", content: "website" },

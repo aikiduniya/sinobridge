@@ -8,7 +8,7 @@ import factoryImg from "@/assets/factory.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — China SourceLink | China Sourcing & Procurement Agency" },
+      { title: "About China SourceLink — China Sourcing Agency" },
       { name: "description", content: "Learn about China SourceLink — a China-based sourcing and procurement agency helping global importers buy safely from China with a transparent 20/80 model." },
       { name: "keywords", content: "about China SourceLink, China sourcing company, China procurement agency, China based buying agent, trusted sourcing partner China" },
       { property: "og:type", content: "website" },
