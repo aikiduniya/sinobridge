@@ -52,7 +52,7 @@ const groups = [
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs — China Sourcing & Procurement Questions | China SourceLink" },
+      { title: "China Sourcing FAQs — China SourceLink" },
       { name: "description", content: "Answers to common questions about China sourcing: 20/80 payment model, supplier verification, quality inspection, shipping, fees and customs." },
       { name: "keywords", content: "China sourcing FAQ, China procurement questions, importing from China, supplier verification, China quality inspection, OEM China FAQ" },
       { property: "og:type", content: "article" },
