@@ -648,6 +648,19 @@ function HeroSlider() {
 }
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "China SourceLink — Trusted China Sourcing & Procurement Agency" },
+      { name: "description", content: "Source generic and branded products from China with full trust. Supplier verification, quality inspection, global shipping and a risk-free 20/80 payment model." },
+      { name: "keywords", content: "China sourcing agent, China procurement agency, China buying agent, import from China, supplier verification, quality inspection China, branded sourcing China, OEM China, China to USA shipping" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "China SourceLink — Trusted China Sourcing & Procurement Agency" },
+      { property: "og:description", content: "Risk-free China sourcing with supplier verification, inspection and global shipping." },
+      { property: "og:url", content: "https://chinasourcelink.com/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/" }],
+  }),
   component: Home,
 });
 
