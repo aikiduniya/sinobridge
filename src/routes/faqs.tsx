@@ -53,12 +53,15 @@ export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
       { title: "FAQs — China Sourcing & Procurement Questions | China SourceLink" },
-      { name: "description", content: "Answers to common questions about China sourcing: payment model, inspection, shipping, fees, suppliers, customs and more." },
+      { name: "description", content: "Answers to common questions about China sourcing: 20/80 payment model, supplier verification, quality inspection, shipping, fees and customs." },
+      { name: "keywords", content: "China sourcing FAQ, China procurement questions, importing from China, supplier verification, China quality inspection, OEM China FAQ" },
+      { property: "og:type", content: "article" },
       { property: "og:title", content: "FAQs — China SourceLink" },
       { property: "og:description", content: "Everything global buyers ask about importing from China." },
-      { property: "og:url", content: "/faqs" },
+      { property: "og:url", content: "https://chinasourcelink.com/faqs" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/faqs" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/faqs" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -113,7 +116,7 @@ function FaqsPage() {
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-[oklch(0.85_0.12_75)] text-[oklch(0.22_0.08_60)] font-semibold px-6 h-12">
               Contact Our Team
             </Link>
-            <a href="https://wa.me/8615900000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white/10 border border-white/30 text-white font-semibold px-6 h-12 hover:bg-white/20">
+            <a href="https://wa.me/15715990628" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white/10 border border-white/30 text-white font-semibold px-6 h-12 hover:bg-white/20">
               Chat on WhatsApp
             </a>
           </div>

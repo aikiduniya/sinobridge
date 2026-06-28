@@ -9,12 +9,15 @@ export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — China Sourcing, Inspection & Shipping | China SourceLink" },
-      { name: "description", content: "Full China procurement services: sourcing, supplier verification, negotiation, quality inspection, order management and global shipping." },
+      { name: "description", content: "Full China procurement services: product sourcing, supplier verification, price negotiation, quality inspection, order management and global shipping." },
+      { name: "keywords", content: "China sourcing services, China procurement, supplier verification, quality inspection, China shipping, China buying services" },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "Services — China SourceLink" },
       { property: "og:description", content: "End-to-end procurement: sourcing, verification, QC and logistics." },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://chinasourcelink.com/services" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/services" }],
   }),
   component: ServicesPage,
 });

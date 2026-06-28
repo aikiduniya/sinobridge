@@ -7,8 +7,11 @@ export const Route = createFileRoute("/privacy")({
     meta: [
       { title: "Privacy Policy | China SourceLink" },
       { name: "description", content: "How China SourceLink collects, uses and protects information you share through our website and services." },
+      { name: "keywords", content: "China SourceLink privacy, privacy policy, data protection" },
+      { property: "og:title", content: "Privacy Policy | China SourceLink" },
+      { property: "og:url", content: "https://chinasourcelink.com/privacy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/privacy" }],
   }),
   component: PrivacyPage,
 });

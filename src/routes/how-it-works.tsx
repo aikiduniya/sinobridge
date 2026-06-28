@@ -8,12 +8,15 @@ export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
       { title: "How It Works — Risk-Free China Sourcing Process | China SourceLink" },
-      { name: "description", content: "Step-by-step China sourcing process: inquiry, sourcing, 20% advance, purchase, inspection, shipping, delivery and final 80% payment." },
+      { name: "description", content: "Our 10-step China sourcing process: inquiry, supplier sourcing, 20% advance, purchase, quality inspection, global shipping, delivery and final 80% payment." },
+      { name: "keywords", content: "China sourcing process, how China sourcing works, 20/80 payment model, China procurement steps, safe buying from China" },
+      { property: "og:type", content: "article" },
       { property: "og:title", content: "How It Works — China SourceLink" },
       { property: "og:description", content: "A transparent 10-step procurement process built around buyer safety." },
-      { property: "og:url", content: "/how-it-works" },
+      { property: "og:url", content: "https://chinasourcelink.com/how-it-works" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/how-it-works" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/how-it-works" }],
   }),
   component: HowItWorks,
 });

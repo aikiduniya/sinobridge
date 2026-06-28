@@ -52,8 +52,8 @@ export function Footer() {
           <h4 className="text-white text-sm font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-[oklch(0.75_0.02_245)]">
             <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5" /> <a href="mailto:info@chinasourcelink.com" className="hover:text-white">info@chinasourcelink.com</a></li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5" /> <a href="tel:+15715990628" className="hover:text-white">+1 (571) 599-0628</a></li>
-            
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5" /> <a href="tel:+15715990628" className="hover:text-white">+1 (571) 599-0628 <span className="text-xs text-[oklch(0.6_0.02_245)] block">USA / International</span></a></li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5" /> <a href="tel:+8613759908851" className="hover:text-white">+86 137 5990 8851 <span className="text-xs text-[oklch(0.6_0.02_245)] block">China (Sales)</span></a></li>
           </ul>
           <h4 className="text-white text-sm font-semibold mb-3 mt-6">Legal</h4>
           <ul className="space-y-2 text-sm text-[oklch(0.75_0.02_245)]">

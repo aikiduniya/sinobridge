@@ -39,13 +39,16 @@ const reviewSchema = z.object({
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Client Reviews — China SourceLink China Sourcing Agency" },
-      { name: "description", content: "Real reviews from importers worldwide. Share your experience with China SourceLink or read what global buyers say about our China sourcing service." },
+      { title: "Client Reviews & Testimonials — China SourceLink Sourcing Agency" },
+      { name: "description", content: "Real reviews from importers in 35+ countries. Read what global buyers say about China SourceLink — and share your own China sourcing experience." },
+      { name: "keywords", content: "China SourceLink reviews, China sourcing agent reviews, China procurement testimonials, importer feedback, trusted China buying agent reviews" },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "Client Reviews — China SourceLink" },
       { property: "og:description", content: "Trusted by importers in 35+ countries." },
-      { property: "og:url", content: "/reviews" },
+      { property: "og:url", content: "https://chinasourcelink.com/reviews" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/reviews" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/reviews" }],
   }),
   component: ReviewsPage,
 });

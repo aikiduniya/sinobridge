@@ -15,16 +15,48 @@ export const Route = createFileRoute("/services/$slug")({
     const s = loaderData?.service;
     const title = s ? `${s.title} — China SourceLink` : "Service — China SourceLink";
     const desc = s?.short ?? "China sourcing service detail.";
+    const url = s ? `https://chinasourcelink.com/services/${s.slug}` : "https://chinasourcelink.com/services";
     return {
       meta: [
         { title },
         { name: "description", content: desc },
+        { name: "keywords", content: s ? `${s.title.toLowerCase()}, China sourcing, ${s.slug.replace(/-/g, " ")}, China procurement, import from China` : "China sourcing" },
+        { property: "og:type", content: "article" },
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
-        { property: "og:url", content: s ? `/services/${s.slug}` : "/services" },
+        { property: "og:url", content: url },
         { property: "og:image", content: s?.image ?? "" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: s ? [{ rel: "canonical", href: `/services/${s.slug}` }] : [],
+      links: s ? [{ rel: "canonical", href: url }] : [],
+      scripts: s
+        ? [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                name: s.title,
+                description: s.intro,
+                provider: { "@type": "Organization", name: "China SourceLink", url: "https://chinasourcelink.com/" },
+                areaServed: "Worldwide",
+                url,
+              }),
+            },
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://chinasourcelink.com/" },
+                  { "@type": "ListItem", position: 2, name: "Services", item: "https://chinasourcelink.com/services" },
+                  { "@type": "ListItem", position: 3, name: s.title, item: url },
+                ],
+              }),
+            },
+          ]
+        : [],
     };
   },
   notFoundComponent: () => (
