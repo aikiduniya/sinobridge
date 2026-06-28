@@ -8,13 +8,16 @@ import factoryImg from "@/assets/factory.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — China SourceLink China Sourcing Agency" },
-      { name: "description", content: "Professional China sourcing and procurement agency helping global businesses import products safely and efficiently from China." },
+      { title: "About Us — China SourceLink | China Sourcing & Procurement Agency" },
+      { name: "description", content: "Learn about China SourceLink — a China-based sourcing and procurement agency helping global importers buy safely from China with a transparent 20/80 model." },
+      { name: "keywords", content: "about China SourceLink, China sourcing company, China procurement agency, China based buying agent, trusted sourcing partner China" },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "About Us — China SourceLink" },
       { property: "og:description", content: "Our mission, vision and commitment to risk-free China trade." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://chinasourcelink.com/about" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/about" }],
   }),
   component: AboutPage,
 });

@@ -15,13 +15,16 @@ function TikTokIcon({ className }: { className?: string }) {
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Get a Free Quote | China SourceLink" },
-      { name: "description", content: "Contact our China sourcing team. Free quotes within 12–24 hours. WhatsApp, email and inquiry form available." },
+      { title: "Contact Us — Get a Free China Sourcing Quote | China SourceLink" },
+      { name: "description", content: "Contact China SourceLink for a free China sourcing quote within 12–24 hours. WhatsApp, email and inquiry form available — USA & China teams." },
+      { name: "keywords", content: "contact China SourceLink, China sourcing quote, China procurement contact, free sourcing quote China, China buying agent contact" },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "Contact — China SourceLink" },
       { property: "og:description", content: "Reach our team for a free China sourcing quote." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://chinasourcelink.com/contact" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/contact" }],
   }),
   component: ContactPage,
 });
