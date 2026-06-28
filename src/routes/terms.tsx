@@ -7,8 +7,11 @@ export const Route = createFileRoute("/terms")({
     meta: [
       { title: "Terms & Conditions | China SourceLink" },
       { name: "description", content: "Terms and conditions governing the use of China SourceLink sourcing and procurement services." },
+      { name: "keywords", content: "China SourceLink terms, terms and conditions, sourcing agreement" },
+      { property: "og:title", content: "Terms & Conditions | China SourceLink" },
+      { property: "og:url", content: "https://chinasourcelink.com/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://chinasourcelink.com/terms" }],
   }),
   component: TermsPage,
 });
