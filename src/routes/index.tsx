@@ -56,7 +56,11 @@ const industries = [
 ];
 
 const why = [
-  { icon: ShieldCheck, title: "Verified Supplier Network", desc: "Vetted manufacturers across all major Chinese hubs." },
+  {
+    icon: ShieldCheck,
+    title: "Verified Supplier Network",
+    desc: "Vetted manufacturers across all major Chinese hubs.",
+  },
   { icon: Handshake, title: "Strong Negotiation Power", desc: "Local team, native language, factory-direct pricing." },
   { icon: Award, title: "Quality Guaranteed", desc: "Independent inspection before any payment is released." },
   { icon: ShieldCheck, title: "Risk-Free Buying Model", desc: "Only 20% advance — pay the rest after delivery." },
@@ -81,7 +85,6 @@ const brandLogos = [
   { name: "Apple", logo: appleLogo },
   { name: "Lenovo", logo: lenovoLogo },
 ];
-
 
 const steps = [
   "20% advance to start",
@@ -178,9 +181,9 @@ function Home() {
             </div>
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl">
               {[
-                ["500+", "Global Clients"],
-                ["12+ yrs", "China Experience"],
-                ["1,200+", "Verified Suppliers"],
+                ["100+", "Global Clients"],
+                ["5+ yrs", "China Experience"],
+                ["700+", "Verified Suppliers"],
                 ["35+", "Countries Served"],
               ].map(([n, l]) => (
                 <div key={l}>
@@ -651,11 +654,22 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "China SourceLink — Trusted China Sourcing Agency" },
-      { name: "description", content: "Source generic and branded products from China with full trust. Supplier verification, quality inspection, global shipping and a risk-free 20/80 payment model." },
-      { name: "keywords", content: "China sourcing agent, China procurement agency, China buying agent, import from China, supplier verification, quality inspection China, branded sourcing China, OEM China, China to USA shipping" },
+      {
+        name: "description",
+        content:
+          "Source generic and branded products from China with full trust. Supplier verification, quality inspection, global shipping and a risk-free 20/80 payment model.",
+      },
+      {
+        name: "keywords",
+        content:
+          "China sourcing agent, China procurement agency, China buying agent, import from China, supplier verification, quality inspection China, branded sourcing China, OEM China, China to USA shipping",
+      },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "China SourceLink — Trusted China Sourcing Agency" },
-      { property: "og:description", content: "Risk-free China sourcing with supplier verification, inspection and global shipping." },
+      {
+        property: "og:description",
+        content: "Risk-free China sourcing with supplier verification, inspection and global shipping.",
+      },
       { property: "og:url", content: "https://chinasourcelink.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -663,4 +677,3 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
